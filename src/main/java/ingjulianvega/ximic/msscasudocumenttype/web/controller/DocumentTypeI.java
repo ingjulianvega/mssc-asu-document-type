@@ -23,7 +23,7 @@ import java.util.UUID;
 
 public interface DocumentTypeI {
 
-    @Operation(summary = "Endpoint to get the list of ARL", description = "Returns a list of ARL", tags = {"ARL"})
+    @Operation(summary = "Endpoint to get the list of document types", description = "Returns a list of document types", tags = {"document type"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "The operation was successful.", content = @Content(schema = @Schema(implementation = DocumentTypeList.class))),
 
@@ -36,7 +36,7 @@ public interface DocumentTypeI {
     ResponseEntity<DocumentTypeList> get();
 
 
-    @Operation(summary = "Endpoint to get the information of an ARL given the id", description = "Returns an ARL", tags = {"ARL"})
+    @Operation(summary = "Endpoint to get the information of a document type given the id", description = "Returns a document type", tags = {"document type"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "The operation was successful.", content = @Content(schema = @Schema(implementation = DocumentTypeDto.class))),
 
@@ -46,9 +46,9 @@ public interface DocumentTypeI {
     @RequestMapping(value = "/{id}",
             produces = {"application/json"},
             method = RequestMethod.GET)
-    ResponseEntity<DocumentTypeDto> getById(@Parameter(in = ParameterIn.PATH, description = "The ARL id", required = true, schema = @Schema()) @NotNull @PathVariable("id") UUID id);
+    ResponseEntity<DocumentTypeDto> getById(@Parameter(in = ParameterIn.PATH, description = "The document type id", required = true, schema = @Schema()) @NotNull @PathVariable("id") UUID id);
 
-    @Operation(summary = "Endpoint to create an ARL", description = "Creates a new ARL", tags = {"ARL"})
+    @Operation(summary = "Endpoint to create a document type", description = "Creates a new document type", tags = {"document type"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "The operation was successful."),
 
@@ -59,10 +59,10 @@ public interface DocumentTypeI {
             produces = {"application/json"},
             consumes = {"application/json"},
             method = RequestMethod.POST)
-    ResponseEntity<Void> create(@Parameter(in = ParameterIn.DEFAULT, description = "Name of the new ARL", required = true, schema = @Schema()) @NotNull @Valid @RequestBody DocumentType body);
+    ResponseEntity<Void> create(@Parameter(in = ParameterIn.DEFAULT, description = "Name of the new document type", required = true, schema = @Schema()) @NotNull @Valid @RequestBody DocumentType body);
 
 
-    @Operation(summary = "Endpoint to update the information of an ARL given the id", description = "Updates an ARL", tags = {"ARL"})
+    @Operation(summary = "Endpoint to update the information of a document type given the id", description = "Updates a document type", tags = {"document type"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "The operation was successful."),
 
@@ -73,11 +73,11 @@ public interface DocumentTypeI {
             produces = {"application/json"},
             consumes = {"application/json"},
             method = RequestMethod.PUT)
-    ResponseEntity<Void> updateById(@Parameter(in = ParameterIn.PATH, description = "The ARL id", required = true, schema = @Schema()) @NotNull @PathVariable("id") UUID id,
-                                    @Parameter(in = ParameterIn.DEFAULT, description = "Name of the new ARL", required = true, schema = @Schema()) @NotNull @Valid @RequestBody DocumentType body);
+    ResponseEntity<Void> updateById(@Parameter(in = ParameterIn.PATH, description = "The document type id", required = true, schema = @Schema()) @NotNull @PathVariable("id") UUID id,
+                                    @Parameter(in = ParameterIn.DEFAULT, description = "Name of the new document type", required = true, schema = @Schema()) @NotNull @Valid @RequestBody DocumentType body);
 
 
-    @Operation(summary = "Endpoint to delete an ARL", description = "Deletes an ARL", tags = {"ARL"})
+    @Operation(summary = "Endpoint to delete a document type", description = "Deletes a document type", tags = {"document type"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "The operation was successful."),
 
@@ -87,7 +87,7 @@ public interface DocumentTypeI {
     @RequestMapping(value = "/{id}",
             produces = {"application/json"},
             method = RequestMethod.DELETE)
-    ResponseEntity<Void> deleteById(@Parameter(in = ParameterIn.PATH, description = "The ARL id", required = true, schema = @Schema()) @NotNull @PathVariable("id") UUID id);
+    ResponseEntity<Void> deleteById(@Parameter(in = ParameterIn.PATH, description = "The document type id", required = true, schema = @Schema()) @NotNull @PathVariable("id") UUID id);
 
 
 }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>ingjulianvega.ximic</groupId>
 		<artifactId>mssc-asu-bom</artifactId>
@@ -19,7 +18,7 @@
 		<!--set this to your docker acct name-->
 		<docker.image.prefix>ingjulianvega</docker.image.prefix>
 		<!--Set to name of project-->
-		<docker.image.name>mssc-asu-document-type</docker.image.name>
+		<docker.image.name>mssc-asu-gender</docker.image.name>
 
 	</properties>
 

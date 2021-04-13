@@ -3,7 +3,6 @@ package ingjulianvega.ximic.msscasudocumenttype.exception;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import ingjulianvega.ximic.msscasudocumenttype.configuration.DocumentTypeParameters;
 import ingjulianvega.ximic.msscasudocumenttype.web.model.ApiError;
 import lombok.Getter;
