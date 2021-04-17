@@ -10,7 +10,7 @@
 
 	<groupId>ingjulianvega.ximic</groupId>
 	<artifactId>mssc-asu-document-type</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>mssc-asu-document-type</name>
 	<description>Document type management microservice</description>
 
@@ -18,7 +18,7 @@
 		<!--set this to your docker acct name-->
 		<docker.image.prefix>ingjulianvega</docker.image.prefix>
 		<!--Set to name of project-->
-		<docker.image.name>mssc-asu-gender</docker.image.name>
+		<docker.image.name>mssc-asu-document-type</docker.image.name>
 
 	</properties>
 
