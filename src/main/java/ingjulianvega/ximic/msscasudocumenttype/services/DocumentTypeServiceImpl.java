@@ -30,7 +30,7 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
         log.debug("get()...");
         return DocumentTypeList
                 .builder()
-                .documentTypeDtoList(documentTypeMapper.documentTypeEntityListToDocumentTypeDtoList(documentTypeRepository.findAll()))
+                .documentTypeDtoList(documentTypeMapper.documentTypeEntityListToDocumentTypeDtoList(documentTypeRepository.findAllByOrderByName()))
                 .build();
     }
 

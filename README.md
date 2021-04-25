@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/ingjulianvega/mssc-asu-document-type.svg?style=svg)](https://circleci.com/gh/ingjulianvega/mssc-asu-document-type)
 
-# ASU EPS management microservice
+# ASU Document type management microservice
 
 ### BOM
 

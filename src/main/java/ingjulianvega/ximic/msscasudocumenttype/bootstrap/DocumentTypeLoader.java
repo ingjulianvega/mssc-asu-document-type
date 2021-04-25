@@ -24,7 +24,7 @@ public class DocumentTypeLoader implements CommandLineRunner {
 
     private void loadDocumentTypeObjects() {
         documentTypeRepository.saveAll(Arrays.asList(
-                DocumentTypeEntity.builder().name("NUMERO DE IDENTIFICACIÓN PERSONAL").abbreviation("NIP").build(),
+                DocumentTypeEntity.builder().name("NÚMERO DE IDENTIFICACIÓN PERSONAL").abbreviation("NIP").build(),
                 DocumentTypeEntity.builder().name("TARJETA DE IDENTIDAD").abbreviation("TI").build(),
                 DocumentTypeEntity.builder().name("PASAPORTE").abbreviation("PAP").build(),
                 DocumentTypeEntity.builder().name("CÉDULA DE CIUDADANIA").abbreviation("CC").build(),
