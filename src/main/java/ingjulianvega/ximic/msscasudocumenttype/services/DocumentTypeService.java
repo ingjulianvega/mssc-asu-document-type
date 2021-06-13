@@ -9,7 +9,7 @@ import ingjulianvega.ximic.msscasudocumenttype.web.model.DocumentTypeList;
 import java.util.UUID;
 
 public interface DocumentTypeService {
-    DocumentTypeList get();
+    DocumentTypeList get(Boolean usingCache);
 
     DocumentTypeDto getById(UUID id);
 

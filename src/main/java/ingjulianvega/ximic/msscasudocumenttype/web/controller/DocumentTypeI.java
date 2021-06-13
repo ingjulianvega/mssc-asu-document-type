@@ -33,7 +33,7 @@ public interface DocumentTypeI {
     @RequestMapping(value = "/",
             produces = {"application/json"},
             method = RequestMethod.GET)
-    ResponseEntity<DocumentTypeList> get();
+    ResponseEntity<DocumentTypeList> get(@Parameter(in = ParameterIn.QUERY, description = "The using of cache", required = true, schema = @Schema()) Boolean usingCache);
 
 
     @Operation(summary = "Endpoint to get the information of a document type given the id", description = "Returns a document type", tags = {"document type"})

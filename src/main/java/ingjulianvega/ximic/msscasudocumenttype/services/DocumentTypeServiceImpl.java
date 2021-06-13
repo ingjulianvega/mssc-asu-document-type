@@ -24,9 +24,9 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
     private final DocumentTypeRepository documentTypeRepository;
     private final DocumentTypeMapper documentTypeMapper;
 
-    @Cacheable(cacheNames = "documentTypeListCache")
+    @Cacheable(cacheNames = "documentTypeListCache", condition = "#usingCache == false")
     @Override
-    public DocumentTypeList get() {
+    public DocumentTypeList get(Boolean usingCache) {
         log.debug("get()...");
         return DocumentTypeList
                 .builder()

@@ -20,8 +20,8 @@ public class DocumentTypeController implements DocumentTypeI {
     private final DocumentTypeService documentTypeService;
 
     @Override
-    public ResponseEntity<DocumentTypeList> get() {
-        return new ResponseEntity<>(documentTypeService.get(), HttpStatus.OK);
+    public ResponseEntity<DocumentTypeList> get(Boolean usingCache) {
+        return new ResponseEntity<>(documentTypeService.get(usingCache), HttpStatus.OK);
     }
 
     @Override
