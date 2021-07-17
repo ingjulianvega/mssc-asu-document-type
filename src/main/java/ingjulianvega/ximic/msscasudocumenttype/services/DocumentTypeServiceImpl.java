@@ -12,6 +12,7 @@ import ingjulianvega.ximic.msscasudocumenttype.web.model.DocumentTypeList;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -39,7 +40,14 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
     public DocumentTypeDto getById(UUID id) {
         log.debug("getById()...");
         return documentTypeMapper.documentTypeEntityToDocumentTypeDto(
-                documentTypeRepository.findById(id).orElseThrow(() -> new DocumentTypeException(ErrorCodeMessages.ARL_NOT_FOUND, "")));
+                documentTypeRepository.findById(id).orElseThrow(() -> DocumentTypeException
+                        .builder()
+                        .httpStatus(HttpStatus.BAD_REQUEST)
+                        .apiCode(ErrorCodeMessages.DOCUMENT_TYPE_NOT_FOUND_API_CODE)
+                        .error(ErrorCodeMessages.DOCUMENT_TYPE_NOT_FOUND_ERROR)
+                        .message(ErrorCodeMessages.DOCUMENT_TYPE_NOT_FOUND_MESSAGE)
+                        .solution(ErrorCodeMessages.DOCUMENT_TYPE_NOT_FOUND_SOLUTION)
+                        .build()));
     }
 
     @Override
@@ -58,7 +66,14 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
     @Override
     public void updateById(UUID id, DocumentType documentType) {
         log.debug("updateById...");
-        DocumentTypeEntity documentTypeEntity = documentTypeRepository.findById(id).orElseThrow(() -> new DocumentTypeException(ErrorCodeMessages.ARL_NOT_FOUND, ""));
+        DocumentTypeEntity documentTypeEntity = documentTypeRepository.findById(id).orElseThrow(() -> DocumentTypeException
+                .builder()
+                .httpStatus(HttpStatus.BAD_REQUEST)
+                .apiCode(ErrorCodeMessages.DOCUMENT_TYPE_NOT_FOUND_API_CODE)
+                .error(ErrorCodeMessages.DOCUMENT_TYPE_NOT_FOUND_ERROR)
+                .message(ErrorCodeMessages.DOCUMENT_TYPE_NOT_FOUND_MESSAGE)
+                .solution(ErrorCodeMessages.DOCUMENT_TYPE_NOT_FOUND_SOLUTION)
+                .build());
         documentTypeEntity.setName(documentType.getName());
         documentTypeEntity.setAbbreviation((documentType.getAbbreviation()));
 
