@@ -10,8 +10,6 @@ import javax.validation.constraints.Null;
 import java.io.Serializable;
 import java.util.UUID;
 
-import static ingjulianvega.ximic.msscasudocumenttype.configuration.ErrorCodeMessages.VALIDATION_ABBREVIATION_NULL;
-import static ingjulianvega.ximic.msscasudocumenttype.configuration.ErrorCodeMessages.VALIDATION_NAME_NULL;
 
 @Data
 @NoArgsConstructor
@@ -22,9 +20,9 @@ public class DocumentTypeDto implements Serializable {
 
     @Null
     private UUID id;
-    @NotBlank(message = VALIDATION_NAME_NULL)
+    @NotBlank
     private String name;
-    @NotBlank(message = VALIDATION_ABBREVIATION_NULL)
+    @NotBlank
     private String abbreviation;
 
 }
